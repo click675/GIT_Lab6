@@ -13,7 +13,7 @@ class Pole(object):
 
     def showpole(self):
         self.drawpole = turtle.Turtle()
-        self.drawpole.speed(0)
+        #self.drawpole.speed(0)
         self.drawpole.hideturtle()
         self.drawpole.penup()
         self.drawpole.goto(self.pxpos, self.pypos)
