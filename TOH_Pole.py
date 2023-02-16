@@ -12,7 +12,7 @@ class Pole(object):
         
     def showpole(self):
         self.drawpole = turtle.Turtle()
-        self.drawpole.speed(0)
+        #self.drawpole.speed(0)
         self.drawpole.hideturtle()
         self.drawpole.penup()
         self.drawpole.goto(self.pxpos, self.pypos)
@@ -31,4 +31,9 @@ class Pole(object):
         disk.showdisk()
         
     def popdisk(self):
-        
+        if self.toppos > 0:
+            disk = self.stack.pop()
+            self.toppos = self.toppos - 1
+            return disk
+        else:
+            return None
