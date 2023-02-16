@@ -13,7 +13,6 @@ class Pole(object):
 
     def showpole(self):
         self.drawpole = turtle.Turtle()
-        self.drawpole.setheading(90)
         #self.drawpole.speed(0)
         self.drawpole.hideturtle()
         self.drawpole.penup()
@@ -23,9 +22,9 @@ class Pole(object):
         self.drawpole.forward(self.plength)
         self.drawpole.penup()
         self.drawpole.goto(self.pxpos, self.pypos + 20)
-        # self.drawpole.write(
-        #     self.pname, align = "center", font = ("Arial", 16, "bold")
-        # )
+        self.drawpole.write(
+            self.pname, align = "center", font = ("Arial", 16, "bold")
+        )
         self.drawpole.goto(self.pxpos, self.pypos)
 
     def pushdisk(self, disk):

@@ -12,22 +12,24 @@ class Disk(object):
         self.drawdisk = turtle.Turtle()
 
     def showdisk(self):
+        w = self.dwidth / 2
+        h = self.dheight
+        print("Showing disk " + str(self))
         self.drawdisk.speed(0)
         self.drawdisk.hideturtle()
         self.drawdisk.penup()
         self.drawdisk.goto(self.dxpos, self.dypos)
         self.drawdisk.pendown()
         self.drawdisk.begin_fill()
-        self.drawdisk.forward(self.dwidth)
+        self.drawdisk.forward(w)
         self.drawdisk.left(90)
-        self.drawdisk.forward(self.dheight)
+        self.drawdisk.forward(h)
         self.drawdisk.left(90)
-        self.drawdisk.forward(self.dwidth * 2)
+        self.drawdisk.forward(w * 2)
         self.drawdisk.left(90)
-        self.drawdisk.forward(self.dheight)
+        self.drawdisk.forward(h)
         self.drawdisk.left(90)
-        self.drawdisk.forward(self.dwidth)
-        self.drawdisk.left(90)
+        self.drawdisk.forward(w)
         self.drawdisk.end_fill()
         self.drawdisk.penup()
 
@@ -38,5 +40,13 @@ class Disk(object):
         self.showdisk()
 
     def cleardisk(self):
+        self.drawdisk.penup()
         self.drawdisk.clear()
         self.drawdisk.reset()
+        self.drawdisk.penup()
+
+    def __str__(self):
+        return "Disk: " + self.dname + " at " + str(self.dxpos) + ", " + str(
+            self.dypos
+        ) + " with width " + str(self.dwidth
+                                ) + " and height " + str(self.dheight) + "."
