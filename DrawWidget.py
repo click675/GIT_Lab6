@@ -46,6 +46,12 @@ class DrawWidget(QWidget):
             self.painter.end()
             self.last_point = event.pos()
             self.update()
+            self.image.resize
+            print(self.image.rect())
+            print(self.rect())
+
+    def resizeEvent(self, e):
+        self.image = self.image.scaled(self.width(), self.height())
 
     def clear(self):
         # print("clear")
